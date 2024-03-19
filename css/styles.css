@@ -1,0 +1,148 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+
+/* O'rab turuvchi element klaslari berilayapdi */
+.section {
+  /* O'rab turuvchi element eni */
+  height: 100vh;
+  /* O'rab turuvchi elemeny orqa foni */
+  background-color: #7b1fa2;
+  /* O'rab turuvchi element ichidagi elementlarni o'rtaga keltirish stillari */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Link stillari */
+.menu-btn {
+  /* Link elementi block tipdagi element bo'lganligi uchun display: block; berilayapdi */
+  display: block;
+  /* Linkning o'lchamlari */
+  width: 50px;
+  height: 50px;
+  /* Linkning orqa foni */
+  background-color: #fff;
+  /* Linkni dumaloq qilish uchun */
+  border-radius: 50%;
+  position: relative;
+  z-index: 3;
+}
+
+/* Span, undan keyin va oldin stillar */
+.span {
+ transform: translateX(15px);
+}
+.span,
+.span::before,
+.span::after {
+ /* Span elementi otasiga nisbatan joylashishi uchun position: absolute; berilayapdi */
+ position: absolute;
+ /* Span elementi tepadan 50% joy tashlab joylashayapdi va tepadagi element bilan orasi -1px erilayapdi */
+ top: 50%; margin-top: -1px;
+ /* Span elementining o'lchamlari */
+ width: 20px;
+ height: 1px;
+ /* Span elementining orqa foni */
+ background-color: #222;
+}
+
+/* Span elementi holatini o'zgartirishi uchun ketadigan vat uchun kiritilayapdi */
+.span::before,
+.span::after {
+  content: '';
+  display: block;
+  transition: 0.1s;
+}
+
+/* Span elementi pastga 5px tushayapdi */
+.span::before {
+  transform: translateY(-5px);
+}
+
+/* Span elementi tepaga 5px chiqayapdi */
+.span::after {
+  transform: translateY(5px);
+}
+
+/* Iks ikonca ucun klaslar */
+.span-btn{
+  height: 0;
+}
+
+.span-btn::before {
+  transform: rotate(45deg);
+}
+
+.span-btn::after {
+  transform: rotate(-45deg);
+}
+
+.menu-block {
+  position: relative;
+}
+
+
+/* nav-menu ichidagi linklar uchun klaslar */
+.nav-menu a {
+  /* link bo'lganligi uchun  display: inline-block; bo'ladi*/
+  display: inline-block;
+  /* Linklarning orqa foni */
+  background-color: #fff;
+  /* Linklarni eni va bo'yi */
+  width: 30px;
+  height: 30px;
+  /* Link ichidagi elementni markazga keltirish uchun klaslar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* linkni dumaloq qilish uchun klas */
+  border-radius: 50%;
+  /* linkning chegarasi klasi */
+  border: 1px solid #000;
+  /* linkni holayini o'zgartirishi uchun ketadigan vaqt */
+  transition: 0.3s;
+  /* Linklar ota elementga nisbatan joylashishui uchun position: absolute; berildi otasining position: relative;*/
+  position: absolute;
+  /* Linklar menuning barkaziga keltirish uchun */
+  left: calc(50% - 15px);
+  top: calc(30% - 15%);
+  /* Linklar menuning orqasiga o'tib olishi uchun  z-index: 0; berildi bunda menuning z-index: 1; yani linknikidan katta bo'lishi kerak*/
+  z-index: 0;
+}
+
+/* birinchi link holatini o'zgartirishi uchun ketadigan vaqt */
+.nav-menu a:nth-child(1) {
+ transition-delay: 0.1s;
+}
+
+/* ikkinchi link holatini o'zgartirishi uchun ketadigan vaqt */
+.nav-menu a:nth-child(2) {
+  transition-delay: 0.2s
+}
+
+
+/* uchinchi link holatini o'zgartirishi uchun ketadigan vaqt */
+.nav-menu a:nth-child(3) {
+  transition-delay: 0.3s
+}
+
+
+
+/* Birnichi linkga nav-menu-active klasi qo'shilganda X o'q bo'ylab 150% o'ng yurishi uchun*/
+.nav-menu-active a:nth-child(1) {
+  transform: translate(150%, 0);
+}
+
+/* Ikkinchi linkga nav-menu-active klasi qo'shilganda X o'q bo'ylab 100% o'ng yurishi va Y o'q bo'ylab 100% pastga tushishi uchunuchun*/
+.nav-menu-active a:nth-child(2) {
+  transform: translate(100%, 100%);
+}
+
+/* Uchinchi linkga nav-menu-active klasi qo'shilganda Y o'q bo'ylab 150% pastga tushishi uchun*/
+.nav-menu-active a:nth-child(3) {
+  transform: translate(0, 150%);
+}
